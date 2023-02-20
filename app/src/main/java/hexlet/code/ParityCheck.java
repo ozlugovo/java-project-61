@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Random;
 import java.util.Scanner;
 
-public class parityCheck {
+public class ParityCheck {
     public static void parityGame() {
         int rightAnswer = 0;
         int randomInt;
@@ -23,7 +23,9 @@ public class parityCheck {
             String correctAnswer;
             if ((randomInt % 2) == 0) {
                 correctAnswer = "yes";
-            } else correctAnswer = "no";
+            } else {
+                correctAnswer = "no";
+            }
 
             System.out.println("Question: " + randomInt);
             System.out.println("Your answer: ");
@@ -32,7 +34,8 @@ public class parityCheck {
                 System.out.println("Correct!");
                 rightAnswer++;
             } else {
-                System.out.println('\'' + answer + '\'' + " is wrong answer ;(. Correct answer was " + '\'' + correctAnswer + '\'');
+                System.out.print('\'' + answer + '\'' + " is wrong answer ");
+                System.out.println(";(. Correct answer was \" + '\\'' + correctAnswer + '\\'');");
                 System.out.println("Let's try again, " + userName + '!');
                 break;
             }

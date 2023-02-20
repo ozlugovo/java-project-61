@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 import static hexlet.code.Cli.greet;
-import static hexlet.code.parityCheck.parityGame;
+import static hexlet.code.ParityCheck.parityGame;
 
 public class App {
     public static void main(String[] args) {
