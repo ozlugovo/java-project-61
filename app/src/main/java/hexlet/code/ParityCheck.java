@@ -11,7 +11,7 @@ public class ParityCheck {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Welcome to the Brain Games!");
+        System.out.println("\nWelcome to the Brain Games!");
         System.out.print("May I have your name? ");
         String userName = scanner.next();
         System.out.println("Hello, " + userName + "!");
@@ -28,14 +28,14 @@ public class ParityCheck {
             }
 
             System.out.println("Question: " + randomInt);
-            System.out.println("Your answer: ");
+            System.out.print("Your answer: ");
             String answer = scanner.next();
             if (correctAnswer.equals(answer)) {
                 System.out.println("Correct!");
                 rightAnswer++;
             } else {
                 System.out.print('\'' + answer + '\'' + " is wrong answer ");
-                System.out.println(";(. Correct answer was \" + '\\'' + correctAnswer + '\\'');");
+                System.out.println(";(. Correct answer was " + '\'' + correctAnswer + '\'' + '.');
                 System.out.println("Let's try again, " + userName + '!');
                 break;
             }

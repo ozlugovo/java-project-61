@@ -13,8 +13,9 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("0 - Exit");
+
+        System.out.print("Your choice: ");
         String gameChoose = gameChooseScanner.next();
-        System.out.println("Your choice: " + gameChoose);
 
         if (gameChoose.equals("1")) {
             greet();
