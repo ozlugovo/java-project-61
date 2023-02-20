@@ -3,7 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 import static hexlet.code.Cli.greet;
-import static hexlet.code.ParityCheck.parityGame;
+import static hexlet.code.Even.parityCheckGame;
+
 
 public class App {
     public static void main(String[] args) {
@@ -21,7 +22,7 @@ public class App {
             greet();
         }
         if (gameChoose.equals("2")) {
-            parityGame();
+            parityCheckGame();
         }
     }
 }

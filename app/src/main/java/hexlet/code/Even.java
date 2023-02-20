@@ -3,8 +3,8 @@ package hexlet.code;
 import java.util.Random;
 import java.util.Scanner;
 
-public class ParityCheck {
-    public static void parityGame() {
+public class Even {
+    public static void parityCheckGame() {
         int rightAnswer = 0;
         int randomInt;
         Random x = new Random();
