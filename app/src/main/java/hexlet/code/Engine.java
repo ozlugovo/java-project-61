@@ -17,6 +17,7 @@ public class Engine {
         switch (gameNumb) {
             case 2 -> System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             case 3 -> System.out.println("What is the result of the expression?");
+            case 4 -> System.out.println("Find the greatest common divisor of given numbers.");
         }
     }
     public static void congratulationsUser(String userName) {

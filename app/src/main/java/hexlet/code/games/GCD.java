@@ -5,40 +5,26 @@ import java.util.Scanner;
 
 import static hexlet.code.Engine.*;
 
-public class Calc {
-    public static char mathAction() {
-        char[] actionChars = new char[]{'+', '-', '*'};
-        Random x = new Random();
-        int i = x.nextInt(3);
-        return actionChars[i];
-    }
-    public static void calcGame() {
+public class GCD {
+    public static void gcdGame() {
         Random x = new Random();
         Scanner scanner = new Scanner(System.in);
         int randomIntOne;
         int randomIntTwo;
-        char mathAction;
-        int correctAnswer = 0;
+        int correctAnswer;
         int rightAnswer = 0;
 
         String userName = inNameUser();
-        welcomeUser(3, userName);
+        welcomeUser(4, userName);
 
         while (rightAnswer < 3) {
-            randomIntOne = x.nextInt(11);
-            randomIntTwo = x.nextInt(11);
-            mathAction = mathAction();
-            if (mathAction == '+') {
-                correctAnswer = randomIntOne + randomIntTwo;
-            } else if (mathAction == '-') {
-                correctAnswer = randomIntOne - randomIntTwo;
-            } else if (mathAction == '*') {
-                correctAnswer = randomIntOne * randomIntTwo;
-            }
-            System.out.println("Question: " + randomIntOne + ' ' + mathAction + ' ' + randomIntTwo);
+            randomIntOne = x.nextInt(101);
+            randomIntTwo = x.nextInt(101);
+            System.out.println("Question: " + randomIntOne + ' ' + randomIntTwo);
             System.out.print("Your answer: ");
             String answerString = scanner.next();
             int answer = Integer.parseInt(answerString);
+            correctAnswer = gcdByBruteForce(randomIntOne,randomIntTwo);
             if (correctAnswer == answer) {
                 System.out.println("Correct!");
                 rightAnswer++;
@@ -50,6 +36,15 @@ public class Calc {
         if (rightAnswer == 3) {
             congratulationsUser(userName);
         }
+    }
 
+    public static int gcdByBruteForce(int n1, int n2) {
+        int gcd = 1;
+        for (int i = 1; i <= n1 && i <= n2; i++) {
+            if (n1 % i == 0 && n2 % i == 0) {
+                gcd = i;
+            }
+        }
+        return gcd;
     }
 }
