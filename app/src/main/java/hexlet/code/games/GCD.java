@@ -24,7 +24,7 @@ public class GCD {
             System.out.print("Your answer: ");
             String answerString = scanner.next();
             int answer = Integer.parseInt(answerString);
-            correctAnswer = gcdByBruteForce(randomIntOne,randomIntTwo);
+            correctAnswer = gcdByBruteForce(randomIntOne, randomIntTwo);
             if (correctAnswer == answer) {
                 System.out.println("Correct!");
                 rightAnswer++;
