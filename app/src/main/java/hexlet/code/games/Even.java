@@ -1,22 +1,20 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 import java.util.Scanner;
+
+import static hexlet.code.Engine.*;
+
 
 public class Even {
     public static void parityCheckGame() {
         int rightAnswer = 0;
         int randomInt;
         Random x = new Random();
-
         Scanner scanner = new Scanner(System.in);
+        String userName = inNameUser();
 
-        System.out.println("\nWelcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String userName = scanner.next();
-        System.out.println("Hello, " + userName + "!");
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-
+        welcomeUser(2, userName);
 
         while (rightAnswer < 3) {
             randomInt = x.nextInt(100) + 1;
@@ -34,14 +32,12 @@ public class Even {
                 System.out.println("Correct!");
                 rightAnswer++;
             } else {
-                System.out.print('\'' + answer + '\'' + " is wrong answer ");
-                System.out.println(";(. Correct answer was " + '\'' + correctAnswer + '\'' + '.');
-                System.out.println("Let's try again, " + userName + '!');
+                incorrectAnswer(answer, correctAnswer, userName);
                 break;
             }
         }
         if (rightAnswer == 3) {
-            System.out.println("Congratulations, " + userName + '!');
+            congratulationsUser(userName);
         }
     }
 }
