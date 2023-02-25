@@ -17,10 +17,12 @@ public class GCD {
         String userName = inNameUser();
         String gameName = "GCD";
         welcomeUser(gameName, userName);
+        int minInt = 1;
+        int maxInt = 101;
 
         while (rightAnswer < 3) {
-            randomIntOne = x.nextInt(101);
-            randomIntTwo = x.nextInt(101);
+            randomIntOne = x.nextInt(minInt, maxInt);
+            randomIntTwo = x.nextInt(minInt, maxInt);
             System.out.println("Question: " + randomIntOne + ' ' + randomIntTwo);
             System.out.print("Your answer: ");
             String answerString = scanner.next();
