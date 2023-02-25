@@ -13,8 +13,9 @@ public class Even {
         Random x = new Random();
         Scanner scanner = new Scanner(System.in);
         String userName = inNameUser();
+        String gameName = "Even";
 
-        welcomeUser(2, userName);
+        welcomeUser(gameName, userName);
 
         while (rightAnswer < 3) {
             randomInt = x.nextInt(100) + 1;

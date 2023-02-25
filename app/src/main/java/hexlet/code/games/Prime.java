@@ -10,7 +10,8 @@ public class Prime {
         Scanner scanner = new Scanner(System.in);
         Random x = new Random();
         String userName = inNameUser();
-        welcomeUser(6, userName);
+        String gameName = "Prime";
+        welcomeUser(gameName, userName);
         int rightAnswer = 0;
         while (rightAnswer < 3) {
             int randomInt = x.nextInt(0, 102);

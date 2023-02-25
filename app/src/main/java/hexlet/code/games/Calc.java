@@ -9,7 +9,7 @@ public class Calc {
     public static char mathAction() {
         char[] actionChars = new char[]{'+', '-', '*'};
         Random x = new Random();
-        int i = x.nextInt(3);
+        int i = x.nextInt(actionChars.length);
         return actionChars[i];
     }
     public static void calcGame() {
@@ -20,13 +20,16 @@ public class Calc {
         char mathAction;
         int correctAnswer = 0;
         int rightAnswer = 0;
+        int needRighAnswer = 3;
+        int maxNumb = 10;
 
         String userName = inNameUser();
-        welcomeUser(3, userName);
+        String gameName = "Calc";
+        welcomeUser(gameName, userName);
 
-        while (rightAnswer < 3) {
-            randomIntOne = x.nextInt(11);
-            randomIntTwo = x.nextInt(11);
+        while (rightAnswer < needRighAnswer) {
+            randomIntOne = x.nextInt(maxNumb) + 1;
+            randomIntTwo = x.nextInt(maxNumb) + 1;
             mathAction = mathAction();
             if (mathAction == '+') {
                 correctAnswer = randomIntOne + randomIntTwo;
@@ -47,7 +50,7 @@ public class Calc {
                 break;
             }
         }
-        if (rightAnswer == 3) {
+        if (rightAnswer == needRighAnswer) {
             congratulationsUser(userName);
         }
 

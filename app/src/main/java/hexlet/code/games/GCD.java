@@ -15,7 +15,8 @@ public class GCD {
         int rightAnswer = 0;
 
         String userName = inNameUser();
-        welcomeUser(4, userName);
+        String gameName = "GCD";
+        welcomeUser(gameName, userName);
 
         while (rightAnswer < 3) {
             randomIntOne = x.nextInt(101);

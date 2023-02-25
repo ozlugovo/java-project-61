@@ -6,7 +6,7 @@ import static hexlet.code.Engine.welcomeUser;
 public class Cli {
     public static void greet() {
         String userName = inNameUser();
-
-        welcomeUser(1, userName);
+        String gameName = "Greet";
+        welcomeUser(gameName, userName);
     }
 }

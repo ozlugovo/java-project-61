@@ -12,7 +12,8 @@ public class Progression {
         int rightAnswer = 0;
 
         String userName = inNameUser();
-        welcomeUser(5, userName);
+        String gameName = "Progression";
+        welcomeUser(gameName, userName);
 
         while (rightAnswer < 3) {
             int[] progMassiv = getProgMassiv();
@@ -45,7 +46,7 @@ public class Progression {
         Random x = new Random();
         int longProg = x.nextInt(10, 16);
         int[] progMassiv = new int[longProg];
-        int starProg = x.nextInt(1,10);
+        int starProg = x.nextInt(1, 10);
         int stepProg = x.nextInt(2, 10);
         progMassiv[0] = starProg;
 

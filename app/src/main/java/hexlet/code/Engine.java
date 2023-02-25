@@ -11,17 +11,17 @@ public class Engine {
         System.out.print("May I have your name? ");
         return scanner.next();
     }
-    public static void welcomeUser(int gameNumb, String userName) {
+    public static void welcomeUser(String gameName, String userName) {
 
         System.out.println("Hello, " + userName + "!");
-        switch (gameNumb) {
-            case 2 -> System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-            case 3 -> System.out.println("What is the result of the expression?");
-            case 4 -> System.out.println("Find the greatest common divisor of given numbers.");
-            case 5 -> System.out.println("What number is missing in the progression?");
-            case 6 -> System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-            default -> System.out.println("Good day!");
+        switch (gameName) {
+            case "Even" -> System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+            case "Calc" -> System.out.println("What is the result of the expression?");
+            case "GCD" -> System.out.println("Find the greatest common divisor of given numbers.");
+            case "Progression" -> System.out.println("What number is missing in the progression?");
+            case "Prime" -> System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         }
+
     }
     public static void congratulationsUser(String userName) {
         System.out.println("Congratulations, " + userName + '!');
