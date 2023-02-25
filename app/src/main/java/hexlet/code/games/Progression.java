@@ -45,12 +45,13 @@ public class Progression {
         Random x = new Random();
         int longProg = x.nextInt(10, 16);
         int[] progMassiv = new int[longProg];
-        int starProg = x.nextInt(10);
+        int starProg = x.nextInt(1,10);
         int stepProg = x.nextInt(2, 10);
         progMassiv[0] = starProg;
 
         for (int i = 1; i < longProg; i++) {
-            progMassiv[i] = progMassiv[i - 1] + stepProg;
+            progMassiv[i] = starProg + stepProg * i;
+
         }
         return progMassiv;
     }
