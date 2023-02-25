@@ -6,6 +6,7 @@ import static hexlet.code.games.Calc.calcGame;
 import static hexlet.code.games.Cli.greet;
 import static hexlet.code.games.Even.parityCheckGame;
 import static hexlet.code.games.GCD.gcdGame;
+import static hexlet.code.games.Prime.primeGame;
 import static hexlet.code.games.Progression.hiddenNumberProg;
 
 
@@ -19,6 +20,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
         System.out.print("Your choice: ");
@@ -38,6 +40,9 @@ public class App {
         }
         if (gameChoose.equals("5")) {
             hiddenNumberProg();
+        }
+        if (gameChoose.equals("6")) {
+            primeGame();
         }
     }
 }
