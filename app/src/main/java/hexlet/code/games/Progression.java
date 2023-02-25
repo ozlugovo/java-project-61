@@ -24,8 +24,8 @@ public class Progression {
             secretNumb[i] = "..";
 
             System.out.print("Question: ");
-            for (int iter = 0; iter < secretNumb.length - 1; iter++) {
-                System.out.print(secretNumb[iter] + " ");
+            for (String numbs : secretNumb) {
+                System.out.print(numbs + " ");
             }
             System.out.print("\nYour answer: ");
             String answer = scanner.next();
