@@ -12,6 +12,7 @@ public class GCD {
         int randomIntOne;
         int randomIntTwo;
         int correctAnswer;
+        int needRightAnswer = 3;
         int rightAnswer = 0;
 
         String userName = inNameUser();
@@ -20,7 +21,7 @@ public class GCD {
         int minInt = 1;
         int maxInt = 101;
 
-        while (rightAnswer < 3) {
+        while (rightAnswer < needRightAnswer) {
             randomIntOne = x.nextInt(minInt, maxInt);
             randomIntTwo = x.nextInt(minInt, maxInt);
             System.out.println("Question: " + randomIntOne + ' ' + randomIntTwo);
@@ -36,7 +37,7 @@ public class GCD {
                 break;
             }
         }
-        if (rightAnswer == 3) {
+        if (rightAnswer == needRightAnswer) {
             congratulationsUser(userName);
         }
     }

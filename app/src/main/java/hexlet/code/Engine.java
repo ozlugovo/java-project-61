@@ -20,6 +20,7 @@ public class Engine {
             case "GCD" -> System.out.println("Find the greatest common divisor of given numbers.");
             case "Progression" -> System.out.println("What number is missing in the progression?");
             case "Prime" -> System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+            default -> System.out.println("Error, unknown game");
         }
 
     }
