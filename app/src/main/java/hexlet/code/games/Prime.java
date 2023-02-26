@@ -44,6 +44,9 @@ public class Prime {
                 break;
             }
         }
+        if (randomInt == 1) {
+            correctAnswer = "no";
+        }
         return correctAnswer;
     }
 
