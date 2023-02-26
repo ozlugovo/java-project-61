@@ -12,12 +12,12 @@ public class Prime {
         String userName = inNameUser();
         String gameName = "Prime";
         welcomeUser(gameName, userName);
-        int needRightAnswer = 3;
+        final int needRightAnswer = 3;
         int rightAnswer = 0;
-        final int minGenerInt = 1;
-        final int maxGenerInt = 101;
+        final int minGenInt = 1;
+        final int maxGenInt = 101;
         while (rightAnswer < needRightAnswer) {
-            int randomInt = x.nextInt(minGenerInt, maxGenerInt);
+            int randomInt = x.nextInt(minGenInt, maxGenInt);
             System.out.println("Question: " + randomInt);
             System.out.print("Your answer: ");
             String answer = scanner.next();
@@ -29,7 +29,7 @@ public class Prime {
                 break;
             }
         }
-        if (rightAnswer == 3) {
+        if (rightAnswer == needRightAnswer) {
             congratulationsUser(userName);
         }
     }

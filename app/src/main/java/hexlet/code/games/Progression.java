@@ -10,12 +10,13 @@ public class Progression {
         Random x = new Random();
         Scanner scanner = new Scanner(System.in);
         int rightAnswer = 0;
+        final int needRightAnswer = 3;
 
         String userName = inNameUser();
         String gameName = "Progression";
         welcomeUser(gameName, userName);
 
-        while (rightAnswer < 3) {
+        while (rightAnswer < needRightAnswer) {
             int[] progMassiv = getProgMassiv();
             int longMassiv = progMassiv.length;
             int i = x.nextInt(longMassiv);
@@ -38,16 +39,22 @@ public class Progression {
                 break;
             }
         }
-        if (rightAnswer == 3) {
+        if (rightAnswer == needRightAnswer) {
             congratulationsUser(userName);
         }
     }
     public static int[] getProgMassiv() {
         Random x = new Random();
-        int longProg = x.nextInt(10, 16);
+        final int minGenInt = 10;
+        final int maxGenInt = 16;
+        final int minGenIntStepProg = 2;
+        final int maxGenIntStepProg = 16;
+        final int minStartProgGenInt = 1;
+        final int maxStartProgGenInt = 10;
+        int longProg = x.nextInt(minGenInt, maxGenInt);
         int[] progMassiv = new int[longProg];
-        int starProg = x.nextInt(1, 10);
-        int stepProg = x.nextInt(2, 10);
+        int starProg = x.nextInt(minStartProgGenInt, maxStartProgGenInt);
+        int stepProg = x.nextInt(minGenIntStepProg, maxGenIntStepProg);
         progMassiv[0] = starProg;
 
         for (int i = 1; i < longProg; i++) {

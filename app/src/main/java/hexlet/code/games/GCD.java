@@ -12,18 +12,18 @@ public class GCD {
         int randomIntOne;
         int randomIntTwo;
         int correctAnswer;
-        int needRightAnswer = 3;
+        final int needRightAnswer = 3;
         int rightAnswer = 0;
 
         String userName = inNameUser();
         String gameName = "GCD";
         welcomeUser(gameName, userName);
-        int minInt = 1;
-        int maxInt = 101;
+        final int minGenInt = 1;
+        final int maxGenInt = 101;
 
         while (rightAnswer < needRightAnswer) {
-            randomIntOne = x.nextInt(minInt, maxInt);
-            randomIntTwo = x.nextInt(minInt, maxInt);
+            randomIntOne = x.nextInt(minGenInt, maxGenInt);
+            randomIntTwo = x.nextInt(minGenInt, maxGenInt);
             System.out.println("Question: " + randomIntOne + ' ' + randomIntTwo);
             System.out.print("Your answer: ");
             String answerString = scanner.next();

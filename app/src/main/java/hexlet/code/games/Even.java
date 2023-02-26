@@ -14,13 +14,13 @@ public class Even {
         Scanner scanner = new Scanner(System.in);
         String userName = inNameUser();
         String gameName = "Even";
-        int maxNumb = 100;
-        int needRightAnswer = 3;
+        final int maxGenInt = 101;
+        final int needRightAnswer = 3;
 
         welcomeUser(gameName, userName);
 
         while (rightAnswer < needRightAnswer) {
-            randomInt = x.nextInt(maxNumb) + 1;
+            randomInt = x.nextInt(maxGenInt) + 1;
             String correctAnswer;
             if ((randomInt % 2) == 0) {
                 correctAnswer = "yes";
