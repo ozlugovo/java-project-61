@@ -14,10 +14,10 @@ public class Prime {
         welcomeUser(gameName, userName);
         int needRightAnswer = 3;
         int rightAnswer = 0;
-        int minInt = 1;
-        int maxInt = 101;
+        final int minGenerInt = 1;
+        final int maxGenerInt = 101;
         while (rightAnswer < needRightAnswer) {
-            int randomInt = x.nextInt(minInt, maxInt);
+            int randomInt = x.nextInt(minGenerInt, maxGenerInt);
             System.out.println("Question: " + randomInt);
             System.out.print("Your answer: ");
             String answer = scanner.next();
@@ -36,7 +36,7 @@ public class Prime {
 
     public static String primeCheck(int randomInt) {
         String correctAnswer = "no";
-        int[] primeList = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
+        final int[] primeList = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
         for (int j : primeList) {
             if (randomInt == j) {
                 correctAnswer = "yes";

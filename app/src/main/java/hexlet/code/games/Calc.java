@@ -20,8 +20,8 @@ public class Calc {
         char mathAction;
         int correctAnswer = 0;
         int rightAnswer = 0;
-        int needRighAnswer = 3;
-        int maxNumb = 10;
+        final int needRighAnswer = 3;
+        final int maxNumb = 10;
 
         String userName = inNameUser();
         String gameName = "Calc";
