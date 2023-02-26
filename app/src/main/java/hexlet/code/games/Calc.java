@@ -3,7 +3,10 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.inNameUser;
+import static hexlet.code.Engine.welcomeUser;
+import static hexlet.code.Engine.incorrectAnswer;
+import static hexlet.code.Engine.congratulationsUser;
 
 public class Calc {
     public static char mathAction() {

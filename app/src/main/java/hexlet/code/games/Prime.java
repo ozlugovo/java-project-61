@@ -3,7 +3,10 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-import static hexlet.code.Engine.*;
+import static hexlet.code.Engine.inNameUser;
+import static hexlet.code.Engine.welcomeUser;
+import static hexlet.code.Engine.incorrectAnswer;
+import static hexlet.code.Engine.congratulationsUser;
 
 public class Prime {
     public static void primeGame() {
@@ -33,16 +36,15 @@ public class Prime {
             congratulationsUser(userName);
         }
     }
-
     public static String primeCheck(int randomInt) {
-        String correctAnswer = "no";
-        final int[] primeList = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101};
-        for (int j : primeList) {
-            if (randomInt == j) {
-                correctAnswer = "yes";
+        String correctAnswer = "yes";
+        for (int i = 2; i < randomInt; i++) {
+            if (randomInt % i == 0) {
+                correctAnswer = "no";
                 break;
             }
         }
         return correctAnswer;
     }
+
 }
