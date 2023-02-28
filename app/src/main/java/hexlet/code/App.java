@@ -1,14 +1,13 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.Cli;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
+
 import java.util.Scanner;
-
-import static hexlet.code.games.Calc.calcGame;
-import static hexlet.code.games.Cli.greet;
-import static hexlet.code.games.Even.parityCheckGame;
-import static hexlet.code.games.GCD.gcdGame;
-import static hexlet.code.games.Prime.primeGame;
-import static hexlet.code.games.Progression.hiddenNumberProg;
-
 
 public class App {
     public static void main(String[] args) {
@@ -26,23 +25,16 @@ public class App {
         System.out.print("Your choice: ");
         String gameChoose = gameChooseScanner.next();
 
-        if (gameChoose.equals("1")) {
-            greet();
+        switch (gameChoose) {
+            case "1" -> Cli.greet();
+            case "2" -> Even.parityCheckGame();
+            case "3" -> Calc.calcGame();
+            case "4" -> GCD.gcdGame();
+            case "5" -> Progression.hiddenNumberProg();
+            case "6" -> Prime.primeGame();
         }
-        if (gameChoose.equals("2")) {
-            parityCheckGame();
-        }
-        if (gameChoose.equals("3")) {
-            calcGame();
-        }
-        if (gameChoose.equals("4")) {
-            gcdGame();
-        }
-        if (gameChoose.equals("5")) {
-            hiddenNumberProg();
-        }
-        if (gameChoose.equals("6")) {
-            primeGame();
-        }
+        gameChooseScanner.close();
     }
 }
+
+
