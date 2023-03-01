@@ -15,10 +15,10 @@ public class Progression {
         secretNumb[i] = "..";
 
         System.out.print("Question: ");
-            for (String numbs : secretNumb) {
-                System.out.print(numbs + " ");
-            }
-            return correctAnswer;
+        for (String numbs : secretNumb) {
+            System.out.print(numbs + " ");
+        }
+        return correctAnswer;
     }
     public static int[] getProgMassiv() {
         Random x = new Random();

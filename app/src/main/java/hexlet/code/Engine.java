@@ -12,11 +12,12 @@ public class Engine {
     public static void engineGame(String numberGame) {
         Scanner scanner = new Scanner(System.in);
         int rightAnswer = 0;
+        int righAnswerToWin = 3;
         String correctAnswer;
         String answer;
         String userName = inNameUser(numberGame);
 // остановился тут
-        while (rightAnswer < 3) {
+        while (rightAnswer < righAnswerToWin) {
             correctAnswer = gameRound(numberGame);
             System.out.print("Your answer: ");
             answer = scanner.next();
@@ -28,7 +29,7 @@ public class Engine {
                 break;
             }
         }
-        if (rightAnswer == 3) {
+        if (rightAnswer == righAnswerToWin) {
             congratulationsUser(userName);
         }
 
@@ -55,13 +56,16 @@ public class Engine {
 
     public static String gameRound(String numberGame) {
         String correctAnswer = null;
-        switch (numberGame) {
-            case "2" -> correctAnswer = Even.parityCheckGame();
-            case "3" -> correctAnswer = Calc.calcGame();
-            case "4" -> correctAnswer = GCD.gcdGame();
-            case "5" -> correctAnswer = Progression.hiddenNumberProg();
-            case "6" -> correctAnswer = Prime.primeGame();
-            default -> System.out.println("Error, unknown game");
+        if (numberGame.equals("2")) {
+            correctAnswer = Even.parityCheckGame();
+        } else if (numberGame.equals("3")) {
+            correctAnswer = Calc.calcGame();
+        } else if (numberGame.equals("4")) {
+            correctAnswer = GCD.gcdGame();
+        } else if (numberGame.equals("5")) {
+            correctAnswer = Progression.hiddenNumberProg();
+        } else if (numberGame.equals("6")) {
+            correctAnswer = Prime.primeGame();
         }
         return correctAnswer;
     }

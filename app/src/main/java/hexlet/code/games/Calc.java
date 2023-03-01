@@ -15,15 +15,18 @@ public class Calc {
         final int maxGenNumb = 10;
         int randomIntOne = x.nextInt(maxGenNumb) + 1;
         int randomIntTwo = x.nextInt(maxGenNumb) + 1;
-        char mathAction = mathAction();
+        char mAction = mathAction();
         int correctAnswer = 0;
 
-        switch (mathAction) {
-            case '+' -> correctAnswer = randomIntOne + randomIntTwo;
-            case '-' -> correctAnswer = randomIntOne - randomIntTwo;
-            case '*' -> correctAnswer = randomIntOne * randomIntTwo;
+        if (mAction == '+') {
+            correctAnswer = randomIntOne + randomIntTwo;
+        } else if (mAction == '-') {
+            correctAnswer = randomIntOne - randomIntTwo;
+        } else if (mAction == '*') {
+            correctAnswer = randomIntOne * randomIntTwo;
         }
-        System.out.println("Question: " + randomIntOne + ' ' + mathAction + ' ' + randomIntTwo);
+
+        System.out.println("Question: " + randomIntOne + ' ' + mAction + ' ' + randomIntTwo);
         return Integer.toString(correctAnswer);
     }
 }

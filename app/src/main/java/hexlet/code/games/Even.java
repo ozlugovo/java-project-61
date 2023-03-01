@@ -13,9 +13,9 @@ public class Even {
         randomInt = x.nextInt(maxGenInt) + 1;
         if ((randomInt % 2) == 0) {
             correctAnswer = "yes";
-            } else {
-                correctAnswer = "no";
-            }
+        } else {
+            correctAnswer = "no";
+        }
         System.out.println("Question: " + randomInt);
         return correctAnswer;
     }
