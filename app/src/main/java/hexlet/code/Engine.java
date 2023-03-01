@@ -10,17 +10,23 @@ import java.util.Scanner;
 
 public class Engine {
     public static void engineGame(String numberGame) {
-        Scanner scannerAnswer = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int rightAnswer = 0;
         final int righAnswerToWin = 3;
         String correctAnswer;
         String answer;
-        String userName = inNameUser(numberGame);
+        String userName;
+
+        System.out.println("\nWelcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+        rulesOfGame(numberGame);
 
         while (rightAnswer < righAnswerToWin) {
             correctAnswer = gameRound(numberGame);
             System.out.print("Your answer: ");
-            answer = scannerAnswer.next();
+            answer = scanner.next();
             if (correctAnswer.equals(answer)) {
                 System.out.println("Correct!");
                 rightAnswer++;
@@ -32,15 +38,11 @@ public class Engine {
         if (rightAnswer == righAnswerToWin) {
             congratulationsUser(userName);
         }
-        scannerAnswer.close();
+        scanner.close();
     }
 
-    public static String inNameUser(String numberGame) {
-        Scanner scannerUserName = new Scanner(System.in);
-        System.out.println("\nWelcome to the Brain Games!");
-        System.out.print("May I have your name? ");
-        String userName = scannerUserName.next();
-        System.out.println("Hello, " + userName + "!");
+    public static void rulesOfGame(String numberGame) {
+
         switch (numberGame) {
             case "2" -> System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             case "3" -> System.out.println("What is the result of the expression?");
@@ -49,7 +51,6 @@ public class Engine {
             case "6" -> System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
             default -> System.out.println("Error, unknown game");
         }
-        return userName;
     }
 
     public static String gameRound(String numberGame) {
