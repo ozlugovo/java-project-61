@@ -12,7 +12,7 @@ public class Engine {
     public static void engineGame(String numberGame) {
         Scanner scanner = new Scanner(System.in);
         int rightAnswer = 0;
-        int righAnswerToWin = 3;
+        final int righAnswerToWin = 3;
         String correctAnswer;
         String answer;
         String userName = inNameUser(numberGame);
@@ -55,19 +55,14 @@ public class Engine {
     }
 
     public static String gameRound(String numberGame) {
-        String correctAnswer = null;
-        if (numberGame.equals("2")) {
-            correctAnswer = Even.parityCheckGame();
-        } else if (numberGame.equals("3")) {
-            correctAnswer = Calc.calcGame();
-        } else if (numberGame.equals("4")) {
-            correctAnswer = GCD.gcdGame();
-        } else if (numberGame.equals("5")) {
-            correctAnswer = Progression.hiddenNumberProg();
-        } else if (numberGame.equals("6")) {
-            correctAnswer = Prime.primeGame();
-        }
-        return correctAnswer;
+        return switch (numberGame) {
+            case "2" -> Even.parityCheckGame();
+            case "3" -> Calc.calcGame();
+            case "4" -> GCD.gcdGame();
+            case "5" -> Progression.hiddenNumberProg();
+            case "6" -> Prime.primeGame();
+            default -> null;
+        };
     }
     public static void incorrectAnswer(String answer, String correctAnswer, String userName) {
         System.out.print('\'' + answer + '\'' + " is wrong answer ");
