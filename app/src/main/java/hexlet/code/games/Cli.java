@@ -1,12 +1,14 @@
 package hexlet.code.games;
 
-import static hexlet.code.Engine.inNameUser;
-import static hexlet.code.Engine.welcomeUser;
+import java.util.Scanner;
 
 public class Cli {
     public static void greet() {
-        String userName = inNameUser();
-        String gameName = "Greet";
-        welcomeUser(gameName, userName);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nWelcome to the Brain Games!");
+        System.out.print("May I have your name? ");
+        String userName = scanner.next();
+        System.out.println("Hello, " + userName + "!");
+        scanner.close();
     }
 }

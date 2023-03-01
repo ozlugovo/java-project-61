@@ -1,12 +1,6 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import java.util.Scanner;
-
-import static hexlet.code.Engine.inNameUser;
-import static hexlet.code.Engine.welcomeUser;
-import static hexlet.code.Engine.incorrectAnswer;
-import static hexlet.code.Engine.congratulationsUser;
 
 public class Calc {
     public static char mathAction() {
@@ -15,47 +9,21 @@ public class Calc {
         int i = x.nextInt(actionChars.length);
         return actionChars[i];
     }
-    public static void calcGame() {
+
+    public static String calcGame() {
         Random x = new Random();
-        Scanner scanner = new Scanner(System.in);
-        int randomIntOne;
-        int randomIntTwo;
-        char mathAction;
+        final int maxGenNumb = 10;
+        int randomIntOne = x.nextInt(maxGenNumb) + 1;
+        int randomIntTwo = x.nextInt(maxGenNumb) + 1;
+        char mathAction = mathAction();
         int correctAnswer = 0;
-        int rightAnswer = 0;
-        final int needRighAnswer = 3;
-        final int maxNumb = 10;
 
-        String userName = inNameUser();
-        String gameName = "Calc";
-        welcomeUser(gameName, userName);
-
-        while (rightAnswer < needRighAnswer) {
-            randomIntOne = x.nextInt(maxNumb) + 1;
-            randomIntTwo = x.nextInt(maxNumb) + 1;
-            mathAction = mathAction();
-            if (mathAction == '+') {
-                correctAnswer = randomIntOne + randomIntTwo;
-            } else if (mathAction == '-') {
-                correctAnswer = randomIntOne - randomIntTwo;
-            } else if (mathAction == '*') {
-                correctAnswer = randomIntOne * randomIntTwo;
-            }
-            System.out.println("Question: " + randomIntOne + ' ' + mathAction + ' ' + randomIntTwo);
-            System.out.print("Your answer: ");
-            String answerString = scanner.next();
-            int answer = Integer.parseInt(answerString);
-            if (correctAnswer == answer) {
-                System.out.println("Correct!");
-                rightAnswer++;
-            } else {
-                incorrectAnswer(answerString, Integer.toString(correctAnswer), userName);
-                break;
-            }
+        switch (mathAction) {
+            case '+' -> correctAnswer = randomIntOne + randomIntTwo;
+            case '-' -> correctAnswer = randomIntOne - randomIntTwo;
+            case '*' -> correctAnswer = randomIntOne * randomIntTwo;
         }
-        if (rightAnswer == needRighAnswer) {
-            congratulationsUser(userName);
-        }
-
+        System.out.println("Question: " + randomIntOne + ' ' + mathAction + ' ' + randomIntTwo);
+        return Integer.toString(correctAnswer);
     }
 }
