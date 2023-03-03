@@ -1,22 +1,31 @@
 package hexlet.code.games;
 
+
+import hexlet.code.Engine;
+
 import java.util.Random;
+
+import static hexlet.code.Engine.roundToWin;
 
 
 public class Even {
-    public static String parityCheckGame() {
+    public static void parityCheckGame() {
         int randomInt;
         Random x = new Random();
         final int maxGenInt = 101;
-        String correctAnswer;
+        final int lengthData = 2;
+        String rulesOfGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String[][] questAndAsnwer = new String[roundToWin][lengthData];
 
-        randomInt = x.nextInt(maxGenInt) + 1;
-        if ((randomInt % 2) == 0) {
-            correctAnswer = "yes";
-        } else {
-            correctAnswer = "no";
+        for (int i = 0; i < roundToWin; i++) {
+            randomInt = x.nextInt(maxGenInt) + 1;
+            questAndAsnwer[i][0] = "Question: "  + randomInt;
+            if ((randomInt % 2) == 0) {
+                questAndAsnwer[i][1] = "yes";
+            } else {
+                questAndAsnwer[i][1] = "no";
+            }
         }
-        System.out.println("Question: " + randomInt);
-        return correctAnswer;
+        Engine.engineGame(rulesOfGame, questAndAsnwer);
     }
 }

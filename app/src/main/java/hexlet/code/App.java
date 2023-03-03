@@ -1,6 +1,8 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
 import hexlet.code.games.Cli;
+import hexlet.code.games.Even;
 
 import java.util.Scanner;
 
@@ -22,11 +24,11 @@ public class App {
 
         switch (gameChoose) {
             case "1" -> Cli.greet();
-            case "2" -> Engine.engineGame("2");
-            case "3" -> Engine.engineGame("3");
-            case "4" -> Engine.engineGame("4");
-            case "5" -> Engine.engineGame("5");
-            case "6" -> Engine.engineGame("6");
+            case "2" -> Even.parityCheckGame();
+            case "3" -> Calc.calcGame();
+//            case "4" -> Engine.engineGame("4");
+//            case "5" -> Engine.engineGame("5");
+//            case "6" -> Engine.engineGame("6");
             default -> System.out.println("Error, unknown game");
         }
         gameChooseScanner.close();
