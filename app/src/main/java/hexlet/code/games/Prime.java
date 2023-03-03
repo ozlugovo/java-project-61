@@ -12,14 +12,13 @@ public class Prime {
 
         final int lengthData = 2;
         String[][] questAndAsnwer = new String[roundToWin][lengthData];
-        String rulesOfGame = "What number is missing in the progression?";
+        String rulesOfGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         final int minGenInt = 1;
         final int maxGenInt = 101;
         for (int i = 0; i < roundToWin; i++) {
             int randomInt = x.nextInt(minGenInt, maxGenInt);
             questAndAsnwer[i][0] = "Question: " + randomInt;
-            System.out.print("Your answer: ");
             questAndAsnwer[i][1]  = primeCheck(randomInt);
         }
         Engine.engineGame(rulesOfGame, questAndAsnwer);
