@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
-import static hexlet.code.Engine.roundToWin;
+import static hexlet.code.Engine.ROUNDTOWIN;
 
 public class Calc {
     public static void calcGame() {
@@ -12,9 +12,9 @@ public class Calc {
         final int maxGenNumb = 10;
         final int lengthData = 2;
         String rulesOfGame = "What is the result of the expression?";
-        String[][] questAndAsnwer = new String[roundToWin][lengthData];
+        String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
-        for (int i = 0; i < roundToWin; i++) {
+        for (int i = 0; i < ROUNDTOWIN; i++) {
             char mAction = mathAction();
             int randomIntOne = x.nextInt(maxGenNumb) + 1;
             int randomIntTwo = x.nextInt(maxGenNumb) + 1;

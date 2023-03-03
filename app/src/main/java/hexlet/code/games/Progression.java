@@ -4,17 +4,17 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
-import static hexlet.code.Engine.roundToWin;
+import static hexlet.code.Engine.ROUNDTOWIN;
 
 public class Progression {
     public static void numberProg() {
         Random x = new Random();
 
         final int lengthData = 2;
-        String[][] questAndAsnwer = new String[roundToWin][lengthData];
+        String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
         String rulesOfGame = "What number is missing in the progression?";
 
-        for (int i = 0; i < roundToWin; i++) {
+        for (int i = 0; i < ROUNDTOWIN; i++) {
             int[] progMassiv = getProgMassiv();
             int longMassiv = progMassiv.length;
             int secretNumbCount = x.nextInt(longMassiv);

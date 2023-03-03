@@ -3,7 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static final int roundToWin = 3;
+    public static final int ROUNDTOWIN = 3;
 
     public static void engineGame(String rulesOfGame, String[][] questAndAsnwer) {
         Scanner scanner = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class Engine {
                 break;
             }
         }
-        if (rightAnswer == roundToWin) {
+        if (rightAnswer == ROUNDTOWIN) {
             System.out.println("Congratulations, " + userName + '!');
         }
         scanner.close();

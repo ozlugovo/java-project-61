@@ -4,19 +4,19 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
-import static hexlet.code.Engine.roundToWin;
+import static hexlet.code.Engine.ROUNDTOWIN;
 
 public class Prime {
     public static void primeGame() {
         Random x = new Random();
 
         final int lengthData = 2;
-        String[][] questAndAsnwer = new String[roundToWin][lengthData];
+        String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
         String rulesOfGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         final int minGenInt = 1;
         final int maxGenInt = 101;
-        for (int i = 0; i < roundToWin; i++) {
+        for (int i = 0; i < ROUNDTOWIN; i++) {
             int randomInt = x.nextInt(minGenInt, maxGenInt);
             questAndAsnwer[i][0] = "Question: " + randomInt;
             questAndAsnwer[i][1]  = primeCheck(randomInt);

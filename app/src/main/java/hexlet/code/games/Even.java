@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
-import static hexlet.code.Engine.roundToWin;
+import static hexlet.code.Engine.ROUNDTOWIN;
 
 
 public class Even {
@@ -15,9 +15,9 @@ public class Even {
         final int maxGenInt = 101;
         final int lengthData = 2;
         String rulesOfGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[][] questAndAsnwer = new String[roundToWin][lengthData];
+        String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
-        for (int i = 0; i < roundToWin; i++) {
+        for (int i = 0; i < ROUNDTOWIN; i++) {
             randomInt = x.nextInt(maxGenInt) + 1;
             questAndAsnwer[i][0] = "Question: "  + randomInt;
             if ((randomInt % 2) == 0) {

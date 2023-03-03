@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 import java.util.Random;
 
-import static hexlet.code.Engine.roundToWin;
+import static hexlet.code.Engine.ROUNDTOWIN;
 
 public class GCD {
     public static void gcdGame() {
@@ -15,9 +15,9 @@ public class GCD {
         final int maxGenInt = 101;
         String rulesOfGame = "Find the greatest common divisor of given numbers.";
         final int lengthData = 2;
-        String[][] questAndAsnwer = new String[roundToWin][lengthData];
+        String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
-        for (int i = 0; i < roundToWin; i++) {
+        for (int i = 0; i < ROUNDTOWIN; i++) {
             randomIntOne = x.nextInt(minGenInt, maxGenInt);
             randomIntTwo = x.nextInt(minGenInt, maxGenInt);
             questAndAsnwer[i][0] = "Question: " + randomIntOne + ' ' + randomIntTwo;
