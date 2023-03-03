@@ -1,19 +1,28 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
+import static hexlet.code.Engine.roundToWin;
+
 public class Prime {
-    public static String primeGame() {
+    public static void primeGame() {
         Random x = new Random();
-        String correctAnswer;
+
+        final int lengthData = 2;
+        String[][] questAndAsnwer = new String[roundToWin][lengthData];
+        String rulesOfGame = "What number is missing in the progression?";
+
         final int minGenInt = 1;
         final int maxGenInt = 101;
-
-        int randomInt = x.nextInt(minGenInt, maxGenInt);
-        System.out.println("Question: " + randomInt);
-        System.out.print("Your answer: ");
-        correctAnswer = primeCheck(randomInt);
-        return correctAnswer;
+        for (int i = 0; i < roundToWin; i++) {
+            int randomInt = x.nextInt(minGenInt, maxGenInt);
+            questAndAsnwer[i][0] = "Question: " + randomInt;
+            System.out.print("Your answer: ");
+            questAndAsnwer[i][1]  = primeCheck(randomInt);
+        }
+        Engine.engineGame(rulesOfGame, questAndAsnwer);
     }
     public static String primeCheck(int randomInt) {
         String correctAnswer = "yes";

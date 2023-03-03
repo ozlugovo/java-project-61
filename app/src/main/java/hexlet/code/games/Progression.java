@@ -1,24 +1,30 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 
+import static hexlet.code.Engine.roundToWin;
+
 public class Progression {
-    public static String hiddenNumberProg() {
+    public static void numberProg() {
         Random x = new Random();
 
-        int[] progMassiv = getProgMassiv();
-        int longMassiv = progMassiv.length;
-        int i = x.nextInt(longMassiv);
+        final int lengthData = 2;
+        String[][] questAndAsnwer = new String[roundToWin][lengthData];
+        String rulesOfGame = "What number is missing in the progression?";
 
-        String[] secretNumb = toStringProgMassiv(progMassiv); // convert int massiv to String\
-        String correctAnswer = String.valueOf(progMassiv[i]);
-        secretNumb[i] = "..";
+        for (int i = 0; i < roundToWin; i++) {
+            int[] progMassiv = getProgMassiv();
+            int longMassiv = progMassiv.length;
+            int secretNumbCount = x.nextInt(longMassiv);
 
-        System.out.print("Question: ");
-        for (String numbs : secretNumb) {
-            System.out.print(numbs + " ");
+            String[] secretNumb = toStringProgMassiv(progMassiv); // convert int massiv to String
+            questAndAsnwer[i][1] = String.valueOf(progMassiv[secretNumbCount]);
+            secretNumb[secretNumbCount] = "..";
+            questAndAsnwer[i][0] = "Question: " + String.join(" ", secretNumb);
         }
-        return correctAnswer;
+        Engine.engineGame(rulesOfGame, questAndAsnwer);
     }
     public static int[] getProgMassiv() {
         Random x = new Random();
