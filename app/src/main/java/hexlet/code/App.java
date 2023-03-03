@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.games.Cli;
+
 import java.util.Scanner;
 
 public class App {
@@ -19,7 +21,7 @@ public class App {
         String gameChoose = gameChooseScanner.next();
 
         switch (gameChoose) {
-            case "1" -> hexlet.code.games.Cli.greet();
+            case "1" -> Cli.greet();
             case "2" -> Engine.engineGame("2");
             case "3" -> Engine.engineGame("3");
             case "4" -> Engine.engineGame("4");
@@ -31,11 +33,5 @@ public class App {
     }
 }
 
-//            case "1" -> Cli.greet();
-//                    case "2" -> Even.parityCheckGame();
-//                    case "3" -> Calc.calcGame();
- //                   case "4" -> GCD.gcdGame();
- //                   case "5" -> Progression.hiddenNumberProg();
- //                   case "6" -> Prime.primeGame();
 
 

@@ -9,10 +9,10 @@ import hexlet.code.games.Prime;
 import java.util.Scanner;
 
 public class Engine {
+    static int righAnswerToWin = 3;
     public static void engineGame(String numberGame) {
         Scanner scanner = new Scanner(System.in);
         int rightAnswer = 0;
-        final int righAnswerToWin = 3;
         String correctAnswer;
         String answer;
         String userName;
