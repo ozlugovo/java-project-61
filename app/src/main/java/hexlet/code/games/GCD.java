@@ -15,7 +15,7 @@ public class GCD {
         String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
-            int maxGenInt = 101;
+            final int maxGenInt = 101;
             randomIntOne = Utils.generateRandomInt(1, maxGenInt);
             randomIntTwo = Utils.generateRandomInt(1, maxGenInt);
             questAndAsnwer[i][0] = "Question: " + randomIntOne + ' ' + randomIntTwo;

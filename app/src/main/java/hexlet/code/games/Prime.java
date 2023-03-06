@@ -13,7 +13,7 @@ public class Prime {
         String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
-            int maxGenInt = 101;
+            final int maxGenInt = 101;
             int randomInt = Utils.generateRandomInt(1, maxGenInt);
             questAndAsnwer[i][0] = "Question: " + randomInt;
             questAndAsnwer[i][1]  = isPrime(randomInt) ? "yes" : "no";

@@ -29,11 +29,11 @@ public class Progression {
         Engine.engineGame(RULES_OF_GAME_PROGRESSION, questAndAsnwer);
     }
     public static int[] generateLimitProgression() {
-        int minlongProg = 10;
-        int maxlongProg = 16;
-        int maxStartProg = 10;
-        int maxstepProg = 16;
-        int lengthData = 3;
+        final int minlongProg = 10;
+        final int maxlongProg = 16;
+        final int maxStartProg = 10;
+        final int maxstepProg = 16;
+        final int lengthData = 3;
         int longProg = Utils.generateRandomInt(minlongProg, maxlongProg);
         int starProg = Utils.generateRandomInt(1, maxStartProg);
         int stepProg = Utils.generateRandomInt(2, maxstepProg);
