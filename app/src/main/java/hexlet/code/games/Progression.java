@@ -1,21 +1,23 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Random;
 
 import static hexlet.code.Engine.ROUNDTOWIN;
 
 public class Progression {
+    static final String RULES_OF_GAME_PROGRESSION = "What number is missing in the progression?";
+
     public static void numberProg() {
         Random x = new Random();
 
         final int lengthData = 2;
         String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
-        String rulesOfGame = "What number is missing in the progression?";
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
-            int[] progMassiv = getProgMassiv();
+            int[] progMassiv = generateProgression(generateLimitProgression());
             int longMassiv = progMassiv.length;
             int secretNumbCount = x.nextInt(longMassiv);
 
@@ -24,25 +26,28 @@ public class Progression {
             secretNumb[secretNumbCount] = "..";
             questAndAsnwer[i][0] = "Question: " + String.join(" ", secretNumb);
         }
-        Engine.engineGame(rulesOfGame, questAndAsnwer);
+        Engine.engineGame(RULES_OF_GAME_PROGRESSION, questAndAsnwer);
     }
-    public static int[] getProgMassiv() {
-        Random x = new Random();
-        final int minGenInt = 10;
-        final int maxGenInt = 16;
-        final int minGenIntStepProg = 2;
-        final int maxGenIntStepProg = 16;
-        final int minStartProgGenInt = 1;
-        final int maxStartProgGenInt = 10;
-        int longProg = x.nextInt(minGenInt, maxGenInt);
+    public static int[] generateLimitProgression() {
+        int longProg = Utils.generateRandomInt(10, 16);
+        int starProg = Utils.generateRandomInt(1, 10);
+        int stepProg = Utils.generateRandomInt(2, 16);
+        int[] limitProgression = new int[3];
+        limitProgression[0] = longProg;
+        limitProgression[1] = starProg;
+        limitProgression[2] = stepProg;
+        return limitProgression;
+
+    }
+    public static int[] generateProgression(int[] limitProgression) {
+        int longProg = limitProgression[0];
         int[] progMassiv = new int[longProg];
-        int starProg = x.nextInt(minStartProgGenInt, maxStartProgGenInt);
-        int stepProg = x.nextInt(minGenIntStepProg, maxGenIntStepProg);
+        int starProg = limitProgression[1];
+        int stepProg = limitProgression[2];
         progMassiv[0] = starProg;
 
         for (int i = 1; i < longProg; i++) {
             progMassiv[i] = starProg + stepProg * i;
-
         }
         return progMassiv;
     }

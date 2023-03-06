@@ -17,15 +17,15 @@ public class Engine {
         System.out.println("Hello, " + userName + "!");
         System.out.println(rulesOfGame);
 
-        for (String[] strings : questAndAsnwer) {
-            System.out.println(strings[0]);
+        for (String[] roundInfo : questAndAsnwer) {
+            System.out.println(roundInfo[0]);
             System.out.print("Your answer: ");
             answer = scanner.next();
-            if (strings[1].equals(answer)) {
+            if (roundInfo[1].equals(answer)) {
                 System.out.println("Correct!");
                 rightAnswer++;
             } else {
-                incorrectAnswer(answer, strings[1], userName);
+                incorrectAnswer(answer, roundInfo[1], userName);
                 break;
             }
         }

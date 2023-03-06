@@ -1,29 +1,26 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
+import hexlet.code.Utils;
 
 import static hexlet.code.Engine.ROUNDTOWIN;
 
 public class GCD {
+    static final String RULES_OF_GAME_GCD = "Find the greatest common divisor of given numbers.";
+
     public static void gcdGame() {
-        Random x = new Random();
         int randomIntOne;
         int randomIntTwo;
-        final int minGenInt = 1;
-        final int maxGenInt = 101;
-        String rulesOfGame = "Find the greatest common divisor of given numbers.";
         final int lengthData = 2;
         String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
-            randomIntOne = x.nextInt(minGenInt, maxGenInt);
-            randomIntTwo = x.nextInt(minGenInt, maxGenInt);
+            randomIntOne = Utils.generateRandomInt(1, 101);
+            randomIntTwo = Utils.generateRandomInt(1, 101);
             questAndAsnwer[i][0] = "Question: " + randomIntOne + ' ' + randomIntTwo;
             questAndAsnwer[i][1] = String.valueOf(gcdByBruteForce(randomIntOne, randomIntTwo));
         }
-        Engine.engineGame(rulesOfGame, questAndAsnwer);
+        Engine.engineGame(RULES_OF_GAME_GCD, questAndAsnwer);
     }
 
     public static int gcdByBruteForce(int n1, int n2) {

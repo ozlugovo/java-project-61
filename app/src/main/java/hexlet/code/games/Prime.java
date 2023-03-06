@@ -1,40 +1,31 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
+import hexlet.code.Utils;
 
 import static hexlet.code.Engine.ROUNDTOWIN;
 
 public class Prime {
-    public static void primeGame() {
-        Random x = new Random();
+    static final String RULES_OF_GAME_PRIME = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
+    public static void primeGame() {
         final int lengthData = 2;
         String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
-        String rulesOfGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-        final int minGenInt = 1;
-        final int maxGenInt = 101;
         for (int i = 0; i < ROUNDTOWIN; i++) {
-            int randomInt = x.nextInt(minGenInt, maxGenInt);
+            int randomInt = Utils.generateRandomInt(1, 101);
             questAndAsnwer[i][0] = "Question: " + randomInt;
-            questAndAsnwer[i][1]  = primeCheck(randomInt);
+            questAndAsnwer[i][1]  = isPrime(randomInt) ? "yes" : "no";
         }
-        Engine.engineGame(rulesOfGame, questAndAsnwer);
+        Engine.engineGame(RULES_OF_GAME_PRIME, questAndAsnwer);
     }
-    public static String primeCheck(int randomInt) {
-        String correctAnswer = "yes";
+    public static boolean isPrime(int randomInt) {
         for (int i = 2; i < randomInt; i++) {
             if (randomInt % i == 0) {
-                correctAnswer = "no";
-                break;
+                return false;
             }
         }
-        if (randomInt == 1) {
-            correctAnswer = "no";
-        }
-        return correctAnswer;
+        return randomInt != 1;
     }
 
 }

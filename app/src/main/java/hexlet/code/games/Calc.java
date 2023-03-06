@@ -1,39 +1,40 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
+import hexlet.code.Utils;
 
 import static hexlet.code.Engine.ROUNDTOWIN;
 
 public class Calc {
+    static final String RULES_OF_GAME_CALC = "What is the result of the expression?";
+
+    static final char[] ACTIONCHARS = new char[]{'+', '-', '*'};
     public static void calcGame() {
-        Random x = new Random();
-        final int maxGenNumb = 10;
         final int lengthData = 2;
-        String rulesOfGame = "What is the result of the expression?";
         String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
             char mAction = mathAction();
-            int randomIntOne = x.nextInt(maxGenNumb) + 1;
-            int randomIntTwo = x.nextInt(maxGenNumb) + 1;
-            if (mAction == '+') {
-                questAndAsnwer[i][1] = String.valueOf(randomIntOne + randomIntTwo);
-            } else if (mAction == '-') {
-                questAndAsnwer[i][1] = String.valueOf(randomIntOne - randomIntTwo);
-            } else if (mAction == '*') {
-                questAndAsnwer[i][1] = String.valueOf(randomIntOne * randomIntTwo);
-            }
+            int randomIntOne = Utils.generateRandomInt(0, 10);
+            int randomIntTwo = Utils.generateRandomInt(0, 10);
+            questAndAsnwer[i][1] = String.valueOf(calculate(randomIntOne, randomIntTwo, mAction));
             questAndAsnwer[i][0] = "Question: " + randomIntOne + ' ' + mAction + ' ' + randomIntTwo;
         }
-        Engine.engineGame(rulesOfGame, questAndAsnwer);
+        Engine.engineGame(RULES_OF_GAME_CALC, questAndAsnwer);
     }
 
     public static char mathAction() {
-        char[] actionChars = new char[]{'+', '-', '*'};
-        Random x = new Random();
-        int i = x.nextInt(actionChars.length);
-        return actionChars[i];
+        int i = Utils.generateRandomInt(0, ACTIONCHARS.length);
+        return ACTIONCHARS[i];
+    }
+    public static int calculate(int oneOperand, int twoOperand, char operator) {
+        int result;
+        result = switch (operator) {
+            case '+' ->  (oneOperand + twoOperand);
+            case '-' ->  (oneOperand - twoOperand);
+            case '*' ->  (oneOperand * twoOperand);
+            default -> 0;
+        };
+        return result;
     }
 }
