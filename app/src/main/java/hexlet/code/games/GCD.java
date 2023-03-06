@@ -15,8 +15,9 @@ public class GCD {
         String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
-            randomIntOne = Utils.generateRandomInt(1, 101);
-            randomIntTwo = Utils.generateRandomInt(1, 101);
+            int maxGenInt = 101;
+            randomIntOne = Utils.generateRandomInt(1, maxGenInt);
+            randomIntTwo = Utils.generateRandomInt(1, maxGenInt);
             questAndAsnwer[i][0] = "Question: " + randomIntOne + ' ' + randomIntTwo;
             questAndAsnwer[i][1] = String.valueOf(gcdByBruteForce(randomIntOne, randomIntTwo));
         }

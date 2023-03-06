@@ -15,8 +15,9 @@ public class Calc {
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
             char mAction = mathAction();
-            int randomIntOne = Utils.generateRandomInt(0, 10);
-            int randomIntTwo = Utils.generateRandomInt(0, 10);
+            int maxGenInt = 10;
+            int randomIntOne = Utils.generateRandomInt(0, maxGenInt);
+            int randomIntTwo = Utils.generateRandomInt(0, maxGenInt);
             questAndAsnwer[i][1] = String.valueOf(calculate(randomIntOne, randomIntTwo, mAction));
             questAndAsnwer[i][0] = "Question: " + randomIntOne + ' ' + mAction + ' ' + randomIntTwo;
         }
