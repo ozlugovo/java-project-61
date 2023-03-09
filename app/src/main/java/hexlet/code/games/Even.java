@@ -19,16 +19,11 @@ public class Even {
             final int maxGenInt = 101;
             randomInt = Utils.generateRandomInt(0, maxGenInt);
             questAndAsnwer[i][0] = "Question: "  + randomInt;
-            questAndAsnwer[i][1] = parityCheck(randomInt);
+            questAndAsnwer[i][1] = isEven(randomInt) ? "yes" : "no";
         }
         Engine.engineGame(RULES_OF_GAME_EVEN, questAndAsnwer);
     }
-    public static String parityCheck(int random) {
-        if (random % 2 == 0) {
-            return "yes";
-        } else {
-            return "no";
-        }
-
+    public static boolean isEven(int random) {
+        return random % 2 == 0;
     }
 }

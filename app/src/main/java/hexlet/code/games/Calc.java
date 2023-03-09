@@ -34,7 +34,7 @@ public class Calc {
             case '+' ->  (oneOperand + twoOperand);
             case '-' ->  (oneOperand - twoOperand);
             case '*' ->  (oneOperand * twoOperand);
-            default -> 0;
+            default -> throw new IllegalStateException("Unexpected value: " + operator);
         };
         return result;
     }
