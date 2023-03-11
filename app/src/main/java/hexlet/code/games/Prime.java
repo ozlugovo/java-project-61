@@ -14,7 +14,7 @@ public class Prime {
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
             final int maxGenInt = 101;
-            int randomInt = Utils.generateRandomInt(1, maxGenInt);
+            int randomInt = Utils.generateRandomInt(0, maxGenInt);
             questAndAsnwer[i][0] = "Question: " + randomInt;
             questAndAsnwer[i][1] = isPrime(randomInt) ? "yes" : "no";
         }
@@ -22,11 +22,12 @@ public class Prime {
     }
 
     public static boolean isPrime(int randomInt) {
-        if (randomInt > 2) {
-            for (int i = 3; i < randomInt; i++) {
-                if (randomInt % i == 0) {
-                    return false;
-                }
+        if (randomInt < 2) {
+            return false;
+        }
+        for (int i = 2; i < randomInt; i++) {
+            if (randomInt % i == 0) {
+                return false;
             }
         }
         return true;
