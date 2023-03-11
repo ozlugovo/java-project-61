@@ -28,8 +28,6 @@ public class Prime {
                     return false;
                 }
             }
-        } else {
-            return false;
         }
         return true;
     }
