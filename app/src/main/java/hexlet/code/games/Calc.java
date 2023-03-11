@@ -14,7 +14,7 @@ public class Calc {
         String[][] questAndAsnwer = new String[ROUNDTOWIN][lengthData];
 
         for (int i = 0; i < ROUNDTOWIN; i++) {
-            char mAction = mathAction();
+            char mAction = getMathAction();
             final int maxGenInt = 10;
             int randomIntOne = Utils.generateRandomInt(0, maxGenInt);
             int randomIntTwo = Utils.generateRandomInt(0, maxGenInt);
@@ -24,7 +24,7 @@ public class Calc {
         Engine.engineGame(RULES_OF_GAME_CALC, questAndAsnwer);
     }
 
-    public static char mathAction() {
+    public static char getMathAction() {
         int i = Utils.generateRandomInt(0, ACTIONCHARS.length);
         return ACTIONCHARS[i];
     }

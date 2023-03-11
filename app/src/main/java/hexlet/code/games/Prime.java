@@ -16,17 +16,21 @@ public class Prime {
             final int maxGenInt = 101;
             int randomInt = Utils.generateRandomInt(1, maxGenInt);
             questAndAsnwer[i][0] = "Question: " + randomInt;
-            questAndAsnwer[i][1]  = isPrime(randomInt) ? "yes" : "no";
+            questAndAsnwer[i][1] = isPrime(randomInt) ? "yes" : "no";
         }
         Engine.engineGame(RULES_OF_GAME_PRIME, questAndAsnwer);
     }
-    public static boolean isPrime(int randomInt) {
-        for (int i = 2; i < randomInt; i++) {
-            if (randomInt % i == 0) {
-                return false;
-            }
-        }
-        return randomInt != 1;
-    }
 
+    public static boolean isPrime(int randomInt) {
+        if (randomInt > 2) {
+            for (int i = 3; i < randomInt; i++) {
+                if (randomInt % i == 0) {
+                    return false;
+                }
+            }
+        } else {
+            return false;
+        }
+        return true;
+    }
 }
