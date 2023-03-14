@@ -29,7 +29,7 @@ public class Progression {
             String[] secretNumb = toStringProgMassiv(progMassiv); // convert int massiv to String
             questAndAsnwer[i][1] = String.valueOf(progMassiv[secretNumbCount]);
             secretNumb[secretNumbCount] = "..";
-            questAndAsnwer[i][0] = "Question: " + String.join(" ", secretNumb);
+            questAndAsnwer[i][0] = String.join(" ", secretNumb);
         }
         Engine.engineGame(RULES_OF_GAME_PROGRESSION, questAndAsnwer);
     }

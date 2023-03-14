@@ -18,7 +18,7 @@ public class GCD {
             final int maxGenInt = 101;
             randomIntOne = Utils.generateRandomInt(1, maxGenInt);
             randomIntTwo = Utils.generateRandomInt(1, maxGenInt);
-            questAndAsnwer[i][0] = "Question: " + randomIntOne + ' ' + randomIntTwo;
+            questAndAsnwer[i][0] = randomIntOne + " " + randomIntTwo;
             questAndAsnwer[i][1] = String.valueOf(gcdByBruteForce(randomIntOne, randomIntTwo));
         }
         Engine.engineGame(RULES_OF_GAME_GCD, questAndAsnwer);

@@ -15,7 +15,7 @@ public class Prime {
         for (int i = 0; i < ROUNDTOWIN; i++) {
             final int maxGenInt = 101;
             int randomInt = Utils.generateRandomInt(0, maxGenInt);
-            questAndAsnwer[i][0] = "Question: " + randomInt;
+            questAndAsnwer[i][0] = String.valueOf(randomInt);
             questAndAsnwer[i][1] = isPrime(randomInt) ? "yes" : "no";
         }
         Engine.engineGame(RULES_OF_GAME_PRIME, questAndAsnwer);

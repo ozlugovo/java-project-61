@@ -19,7 +19,7 @@ public class Calc {
             int randomIntOne = Utils.generateRandomInt(0, maxGenInt);
             int randomIntTwo = Utils.generateRandomInt(0, maxGenInt);
             questAndAsnwer[i][1] = String.valueOf(calculate(randomIntOne, randomIntTwo, mAction));
-            questAndAsnwer[i][0] = "Question: " + randomIntOne + ' ' + mAction + ' ' + randomIntTwo;
+            questAndAsnwer[i][0] = randomIntOne + " " + mAction + " " + randomIntTwo;
         }
         Engine.engineGame(RULES_OF_GAME_CALC, questAndAsnwer);
     }

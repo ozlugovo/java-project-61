@@ -18,7 +18,7 @@ public class Even {
         for (int i = 0; i < ROUNDTOWIN; i++) {
             final int maxGenInt = 101;
             randomInt = Utils.generateRandomInt(0, maxGenInt);
-            questAndAsnwer[i][0] = "Question: "  + randomInt;
+            questAndAsnwer[i][0] = String.valueOf(randomInt);
             questAndAsnwer[i][1] = isEven(randomInt) ? "yes" : "no";
         }
         Engine.engineGame(RULES_OF_GAME_EVEN, questAndAsnwer);
